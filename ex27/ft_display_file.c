@@ -1,27 +1,58 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_display_file.c                                  :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: ywagner <marvin@42.fr>                     +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2025/01/15 19:36:54 by ywagner           #+#    #+#             */
+/*   Updated: 2025/01/15 19:36:57 by ywagner          ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include <unistd.h>
+#include <fcntl.h>
 
-int	main((int argc, char *argv[]))
+int	ft_write(char *argv[]);
+
+int	main(int argc, char *argv[])
 {
-	if (argc > 1)
+	if (argc > 2)
 	{
-		ft_putstr("Too many arguments.");
+		write(1, "Too many arguments.\n", 18);
+		return(-1);		
 	}
-	if else (argc == 0)
+	else if (argc < 2)
 	{
-		ft_putstr("File name missing.");
+		write(1, "File name missing.\n", 18);
+		return(-2);
 	}
-
-
+	else
+	{
+		ft_write(argv);
+	}
+	return(0);
 }
 
-void	ft_putstr (char *str)
+int	ft_write(char *argv[])
 {
-	int	i;
+	int	sz;
+	int	fd;
+	char	buffer[100];
 
-	i = 0;
-	while (str[i] != '\0')
+	fd = open(argv[1], O_RDONLY);
+	if (fd == -1)
 	{
-		write(1, str[i], 1);
-		i++;
+		write(1, "Cannot read file.\n", 18);
+		return(-3);
 	}
+	sz = read(fd, buffer, 100);
+	if (sz != 0)
+	{
+		buffer[sz] = '\0';
+		write(1, buffer, sz);
+		return(0);
+	}
+	return(-4);
 }
+
