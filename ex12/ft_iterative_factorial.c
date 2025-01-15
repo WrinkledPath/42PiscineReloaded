@@ -7,7 +7,7 @@ int	main (void)
 	int	fn;
 	int	result;
 
-	fn = 5;
+	fn = 7;
 	result = ft_iterative_factorial(fn);
 	printf("The factorial of %i is: %i\n", fn, result);
 	return(0);
