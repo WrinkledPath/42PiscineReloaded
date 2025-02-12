@@ -10,7 +10,7 @@ void	*ft_memchr(const void *str, int c, size_t n)
 	while (i < n)
 	{
 		if (cstr[i] == (unsigned char)c)
-			return ((void *)&str[i]);
+			return ((void *) &cstr[i]);
 		i++;
 	}
 	return (NULL);

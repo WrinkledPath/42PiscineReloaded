@@ -40,6 +40,7 @@ void	free_split(char **array, int current)
 		free(array[current--]);
 	free(array);
 }
+
 char	**ft_split(const char *s, char c)
 {
 	int	words;
@@ -61,7 +62,7 @@ char	**ft_split(const char *s, char c)
 			free_split(array, i);
 			return(NULL);
 		}
-		ft_strlcpy(array[i], s, word_len(s, c));
+		ft_strlcpy(array[i], s, word_len(s, c) + 1);
 		s += word_len(s, c) + 1;
 		i++;
 	}

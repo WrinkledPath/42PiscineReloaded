@@ -1,4 +1,4 @@
-#include "libft.h"´
+#include "libft.h"
 
 // Joins 2 strings (s1 and s2). Returns dynamically allocated string with combination of s1/s2
 char	*ft_strjoin(const char *s1, const char *s2)
