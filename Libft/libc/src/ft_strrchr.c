@@ -8,7 +8,7 @@ char	*ft_strrchr(char *str, size_t c)
 
 	if (!str)
 		return (NULL);
-	len = ft_strlen(str) - 1;
+	len = ft_strlen(str);
 	while (len >= 0)
 	{
 		if (str[len] == (char) c)

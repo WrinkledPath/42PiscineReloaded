@@ -1,6 +1,8 @@
 #include "libft.h"
 
-size_t	ft_strlcat(char *dst, char *src, size_t dst_size)
+//Concatenates 2 strings with a max length of dst_size
+
+size_t	ft_strlcat(char *dst, const char *src, size_t dst_size)
 {
 	size_t	dst_len;
 	size_t	src_len;

@@ -4,9 +4,7 @@
 # include <stddef.h>
 # include <unistd.h>
 # include <stdlib.h>
-
-#define INT_MAX 2147483647
-#define INT_MIN (-2147483648)
+# include <limits.h>
 
 int	ft_atoi(const char *str);
 void	ft_bzero(void *s, size_t n);
@@ -19,7 +17,7 @@ int	ft_isprint(int c);
 char	*ft_itoa(int n);
 void	*ft_memchr(const void *str, int c, size_t n);
 int	ft_memcmp(const void *ptr1, const void *ptr2, size_t size);
-void	*ft_memcpy(void *dest, void *src, size_t size);
+void	*ft_memcpy(void *dest, const void *src, size_t size);
 void	*ft_memmove(void *dest, const void *src, size_t size);
 void	*ft_memset(void *ptr, int value, size_t len);
 void	ft_putchar_fd(char c, int fd);
@@ -28,10 +26,10 @@ void	ft_putnbr_fd(int n, int fd);
 void	ft_putstr_fd(char *s, int fd);
 char	**ft_split(const char *s, char c);
 char	*ft_strchr(const char *str, int chr);
-char *ft_strdup (const char *s1);
+char	*ft_strdup (const char *s1);
 void	ft_striteri(char *s, void (*f)(unsigned int, char*));
 char	*ft_strjoin(const char *s1, const char *s2);
-size_t	ft_strlcat(char *dst, char *src, size_t dst_size);
+size_t	ft_strlcat(char *dst, const char *src, size_t dst_size);
 int	ft_strlcpy(char *dst, const char *src, size_t dst_len);
 size_t	ft_strlen(const char *str);
 char	*ft_strmapi(char const *s, char (*f)(unsigned int, char));
